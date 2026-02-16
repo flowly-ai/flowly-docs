@@ -1,0 +1,144 @@
+---
+title: "Writing test plans"
+description: "Write effective test plans in plain English that guide the AI through your website flows."
+---
+
+## What is a test plan?
+
+A test plan is a set of natural language instructions that tell the AI what to test on your website. Instead of writing code or CSS selectors, you describe the user flow in plain English.
+
+The AI reads your instructions, analyzes the page, and decides which actions to take to complete the test.
+
+## Tips for good test plans
+
+### Be specific about elements
+
+Use exact button text, labels, or unique identifiers when referring to elements.
+
+<CodeGroup>
+```text Good
+Click the "Start free trial" button.
+Click the "Subscribe to Pro" link in the pricing table.
+```
+
+```text Avoid
+Click the button.
+Click the signup thing.
+```
+</CodeGroup>
+
+### Break flows into clear steps
+
+Write sequential steps that describe the user journey from start to finish.
+
+<CodeGroup>
+```text Good
+Navigate to the contact page.
+Fill in the name field with "Test User".
+Fill in the email field with "test@example.com".
+Click "Submit".
+Verify a success message appears.
+```
+
+```text Avoid
+Test the contact form and make sure it works.
+```
+</CodeGroup>
+
+### State explicit success criteria
+
+Tell the AI exactly what success looks like. Use "verify" statements to check conditions.
+
+<CodeGroup>
+```text Good
+Verify the confirmation message appears.
+Verify the URL changes to "/dashboard".
+Verify the checkout form loads with the correct plan name.
+```
+
+```text Avoid
+Make sure everything works.
+Check if it's successful.
+```
+</CodeGroup>
+
+### Mention form field labels
+
+When filling forms, reference the visible label or placeholder text.
+
+<CodeGroup>
+```text Good
+Enter "user@example.com" in the email field.
+Enter "password123" in the password field.
+```
+
+```text Avoid
+Type the email.
+Fill in the credentials.
+```
+</CodeGroup>
+
+## Example test plans
+
+### Payment flow
+
+```text
+Go to /pricing.
+Click the "Pro" plan card.
+Click "Subscribe".
+Verify the checkout form loads.
+Verify the plan name shows "Pro - $29/month".
+```
+
+### Contact form submission
+
+```text
+Navigate to the contact page.
+Fill in the name field with "Test User".
+Fill in the email field with "test@example.com".
+Fill in the message field with "This is a test message".
+Click the "Submit" button.
+Verify a success message appears.
+```
+
+### Login flow
+
+```text
+Click "Sign in" in the navigation.
+Enter "user@example.com" in the email field.
+Enter "password123" in the password field.
+Click "Log in".
+Verify the dashboard loads.
+Verify the user name appears in the header.
+```
+
+### Add to cart
+
+```text
+Navigate to the shop page.
+Click on the first product card.
+Select size "Medium" from the dropdown.
+Click "Add to cart".
+Verify the cart icon shows "1 item".
+Click the cart icon.
+Verify the product appears in the cart with size "Medium".
+```
+
+## Built-in templates
+
+Flowly provides starter templates for common flows:
+
+- **Payment flow**: Test checkout and subscription processes
+- **Contact form**: Test form submissions and validation
+- **Add to cart**: Test e-commerce shopping cart flows
+- **Login flow**: Test authentication and session handling
+
+You can customize these templates to match your specific website.
+
+<Tip>
+Start simple and iterate. If the AI doesn't follow your intended path, refine your instructions to be more specific about element labels or add intermediate verification steps.
+</Tip>
+
+<Warning>
+Avoid vague instructions like "test the website" or "check everything works". The AI needs specific, actionable steps to execute your test successfully.
+</Warning>

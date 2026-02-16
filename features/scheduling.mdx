@@ -1,0 +1,137 @@
+---
+title: "Scheduling"
+description: "Automate test execution with recurring schedules and get notified of results."
+---
+
+## Overview
+
+Scheduling lets you run tests automatically on a recurring basis without manual intervention. Set up schedules to catch issues early, monitor production sites continuously, or validate deployments automatically.
+
+<Note>
+  Schedules require a Starter or Pro plan. Free tier users can manually run tests but cannot create automated schedules.
+</Note>
+
+## Creating a schedule
+
+<Steps>
+  <Step title="Open a test case">
+    Navigate to the test case you want to schedule from **Dashboard** > **Test Cases**
+  </Step>
+
+  <Step title="Add a schedule">
+    Click **Add Schedule** and configure the following:
+
+    - **Frequency**: Daily, weekly, or specific days
+    - **Time**: When the test should run
+    - **Timezone**: Select from all IANA timezones
+    - **Notification email** (optional): Email address to receive results
+  </Step>
+
+  <Step title="Activate the schedule">
+    Click **Create** to activate the schedule. Your test will run automatically at the specified time.
+  </Step>
+</Steps>
+
+## Schedule types
+
+<Tabs>
+  <Tab title="Daily">
+    Runs every day at the specified time.
+
+    **Example use case**: Monitor a production checkout flow daily to catch issues before customers do.
+  </Tab>
+
+  <Tab title="Weekly">
+    Runs on selected days of the week (Monday through Sunday).
+
+    **Example use case**: Run regression tests every Monday, Wednesday, and Friday after deployment windows.
+  </Tab>
+
+  <Tab title="Custom">
+    Choose specific days and times for more control.
+
+    **Example use case**: Test a marketing landing page only on weekdays when the team is available to respond.
+  </Tab>
+</Tabs>
+
+## Managing schedules
+
+### View all schedules
+
+Go to **Dashboard** > **Schedules** to see all active and paused schedules across your account.
+
+### Toggle on/off
+
+Pause a schedule temporarily without deleting it:
+
+1. Find the schedule in your list
+2. Click the **toggle switch** to pause or resume
+
+This preserves all schedule settings while preventing execution.
+
+### Edit a schedule
+
+Update the frequency, time, or timezone:
+
+1. Click on the schedule
+2. Click **Edit**
+3. Make your changes and save
+
+The next run will use the updated settings.
+
+### Delete a schedule
+
+Remove a schedule when you no longer need it:
+
+1. Click on the schedule
+2. Click **Delete**
+3. Confirm the deletion
+
+Deleting a schedule does not delete the underlying test case or its run history.
+
+## Notifications
+
+Add an email address when creating or editing a schedule to receive automatic notifications:
+
+- **Test results**: Pass/fail status after each scheduled run
+- **Execution summary**: Link to view full results with screenshots
+- **Quota alerts**: Warning when a scheduled run can't execute due to exhausted quota
+
+<Tip>
+  Use a shared team email (e.g., dev-team@yourcompany.com) to keep everyone informed about scheduled test results.
+</Tip>
+
+## Quota usage
+
+Each scheduled run counts toward your monthly test quota:
+
+- **Starter plan**: 50 tests per month
+- **Pro plan**: 150 tests per month
+
+If your quota is exhausted, scheduled runs will skip execution and send a notification email. Manual test runs will also be blocked until your quota resets.
+
+Your quota resets on your billing cycle start date. Check current usage in **Dashboard** > **Usage**.
+
+<Warning>
+  Ensure your test case URL is accessible from the internet (no localhost or private IPs). Scheduled tests run from Flowly's infrastructure and cannot access local development servers.
+</Warning>
+
+## Best practices
+
+<AccordionGroup>
+  <Accordion title="Choose appropriate frequency">
+    Balance test coverage with quota limits. Daily tests are great for critical flows, but weekly may suffice for less critical features.
+  </Accordion>
+
+  <Accordion title="Align with deployment schedules">
+    Run tests after deployments when changes are most likely to introduce issues.
+  </Accordion>
+
+  <Accordion title="Set realistic timezones">
+    Schedule tests during business hours so your team can respond quickly to failures.
+  </Accordion>
+
+  <Accordion title="Monitor quota usage">
+    Keep an eye on your monthly usage to avoid unexpected test failures at the end of your billing cycle.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,161 @@
+---
+title: "Notifications"
+description: "Get email alerts when tests complete or when scheduled runs fail."
+---
+
+## Overview
+
+Stay informed about test results without constantly watching the dashboard. Flowly sends email notifications for test completions, scheduled run results, and quota alerts.
+
+## Types of notifications
+
+### Test completion
+
+When you queue a test manually, you can opt in to receive an email when the test finishes. This is useful for long-running tests where you don't want to wait in the dashboard.
+
+**Notification includes**:
+- Test case name
+- Pass/fail status
+- Link to view full results
+
+### Scheduled test results
+
+Scheduled tests automatically send email notifications after each run if you configured an email address when creating the schedule.
+
+**Notification includes**:
+- Test case name
+- Target URL
+- Pass/fail result
+- Timestamp
+- Link to view detailed results with screenshots
+
+### Quota exceeded
+
+If a scheduled test can't execute because you've exhausted your monthly quota, Flowly sends an alert email.
+
+**Notification includes**:
+- Which test was skipped
+- Current quota usage
+- Next quota reset date
+- Link to upgrade your plan
+
+## Setting up notifications
+
+### For scheduled tests
+
+Add an email address when creating or editing a schedule:
+
+<Steps>
+  <Step title="Open schedule settings">
+    Go to the test case and click **Add Schedule** or **Edit** on an existing schedule
+  </Step>
+
+  <Step title="Enter email address">
+    Fill in the **Notification email** field with the address that should receive results
+  </Step>
+
+  <Step title="Save">
+    Click **Create** or **Update** to activate notifications
+  </Step>
+</Steps>
+
+### For manual test runs
+
+Opt in to notifications when queuing a test:
+
+1. Click **Run test** on any test case
+2. Look for the **Notify me when complete** banner while the test is queued
+3. Click the banner to enable email notification for this run
+
+<Note>
+  Manual test notification preferences are per-run, not saved to the test case. You must opt in each time you run a test manually.
+</Note>
+
+## Email content
+
+### Successful test notification
+
+When a test passes, the email contains:
+- Test case name
+- URL that was tested
+- "Passed" status with a checkmark
+- Execution time
+- Link to view step-by-step results
+
+### Failed test notification
+
+When a test fails, the email contains:
+- Test case name
+- URL that was tested
+- "Failed" status with details
+- Which step failed
+- AI reasoning for the failure
+- Link to view full results and debug
+
+<Tip>
+  Use a shared team email (e.g., qa-team@yourcompany.com) for scheduled test notifications so everyone stays informed about test results.
+</Tip>
+
+## Notification best practices
+
+<CardGroup cols={2}>
+  <Card title="Dedicated email rules" icon="filter">
+    Set up email filters to automatically label or route Flowly notifications for easy tracking.
+  </Card>
+
+  <Card title="Team distribution lists" icon="users">
+    Use team or department email addresses for scheduled tests so multiple people can respond to failures.
+  </Card>
+
+  <Card title="Critical tests only" icon="bell">
+    Reserve notifications for important flows. Not every test needs an email alert.
+  </Card>
+
+  <Card title="Quota monitoring" icon="gauge">
+    Pay attention to quota exceeded emails and upgrade your plan if you frequently hit limits.
+  </Card>
+</CardGroup>
+
+## Managing notifications
+
+### Update email addresses
+
+Change the notification email for a schedule:
+
+1. Go to **Dashboard** > **Schedules**
+2. Click on the schedule
+3. Click **Edit**
+4. Update the **Notification email** field
+5. Save changes
+
+The new email address will receive all future notifications for that schedule.
+
+### Disable notifications
+
+Remove notifications from a schedule:
+
+1. Edit the schedule
+2. Clear the **Notification email** field
+3. Save
+
+The test will continue running on schedule but won't send email notifications.
+
+### Unsubscribe from notifications
+
+If you no longer want to receive notifications:
+
+1. Click the **Unsubscribe** link at the bottom of any notification email
+2. Confirm your choice
+
+<Warning>
+  Unsubscribing removes you from all Flowly notifications, including quota alerts. Update individual schedule settings instead if you only want to stop specific notifications.
+</Warning>
+
+## Email delivery
+
+Flowly sends emails from `notifications@useflowly.ai`. Ensure this address is:
+- Not blocked by your spam filter
+- Added to your contacts or safe senders list
+- Allowed through your organization's email security policies
+
+If you're not receiving expected notifications, check your spam folder and email filtering rules.

@@ -1,0 +1,103 @@
+---
+title: "Test cases"
+description: "Create, manage, and organize reusable test cases for your websites."
+---
+
+## What are test cases
+
+Test cases are reusable configurations that contain a name, target URL, and test plan. You can run them repeatedly without re-entering the same details each time.
+
+Each test case stores:
+- A descriptive name
+- The target URL to test
+- A test plan written in natural language
+- A complete run history with timestamps and results
+
+## Creating a test case
+
+<Steps>
+  <Step title="Navigate to test cases">
+    Go to **Dashboard** > **Test Cases** > **New Test Case**
+  </Step>
+
+  <Step title="Fill in the details">
+    Enter the following fields:
+
+    - **Name**: A descriptive identifier for this test case
+    - **Target URL**: The starting page for your test
+    - **Test plan**: Instructions in natural language describing what to test
+
+    ```
+    Example test plan:
+    Navigate to the pricing page.
+    Click the "Start free trial" button.
+    Fill in the email field with "test@example.com".
+    Verify the signup form appears.
+    ```
+  </Step>
+
+  <Step title="Save and run">
+    Click **Create** to save your test case. You can run it immediately or schedule it for later.
+  </Step>
+</Steps>
+
+<Tip>
+  Name test cases descriptively (e.g., "Checkout flow - Pro plan monthly" not "Test 1"). This makes it easier to find and manage tests as your library grows.
+</Tip>
+
+## Managing test cases
+
+### Edit a test case
+
+Update the name, URL, or test plan anytime:
+
+1. Go to **Dashboard** > **Test Cases**
+2. Click on the test case you want to edit
+3. Click **Edit**
+4. Make your changes and click **Save**
+
+### Delete a test case
+
+Flowly uses soft-deletion, which means deleted test cases can be restored:
+
+1. Select the test case from your list
+2. Click **Delete**
+3. Confirm the deletion
+
+The test case will move to a "Deleted" view where you can restore or permanently remove it.
+
+### Restore a deleted test case
+
+To recover a test case:
+
+1. Go to **Dashboard** > **Test Cases** > **Deleted**
+2. Find the test case you want to restore
+3. Click **Restore**
+
+The test case will return to your active list with all its run history intact.
+
+## Run history
+
+Each test case automatically tracks all previous runs with:
+- Timestamps for when each test started and completed
+- Pass/fail status
+- Links to detailed results with screenshots and AI reasoning
+
+When you run a test from a test case, the results automatically link back to the test case for easy tracking and comparison over time.
+
+## Best practices
+
+<CardGroup cols={2}>
+  <Card title="Use descriptive names" icon="tag">
+    Name test cases based on the feature or flow they test, not generic labels.
+  </Card>
+  <Card title="Keep URLs consistent" icon="link">
+    Use the same base URL for related tests to group them logically.
+  </Card>
+  <Card title="Review run history" icon="clock-rotate-left">
+    Check previous runs before making changes to see what worked before.
+  </Card>
+  <Card title="Archive unused tests" icon="box-archive">
+    Delete test cases you no longer need instead of letting them clutter your dashboard.
+  </Card>
+</CardGroup>

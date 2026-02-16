@@ -1,0 +1,175 @@
+---
+title: "Plans and pricing"
+description: "Compare Flowly plans and understand usage quotas."
+---
+
+## Plan comparison
+
+Choose the plan that fits your testing needs and budget.
+
+| Feature | Starter | Pro |
+|---------|---------|-----|
+| Monthly tests | 50 | 150 |
+| Max steps per test | 20 | 20 |
+| Test timeout | 180s | 180s |
+| Test cases | Unlimited | Unlimited |
+| Scheduling | ✓ | ✓ |
+| Email notifications | ✓ | ✓ |
+
+### Starter plan
+
+Best for small teams or individual developers who need automated testing:
+- 50 tests per month
+- Full scheduling capabilities
+- Email notifications for all test runs
+- Extended test step limit and timeout
+
+### Pro plan
+
+For teams with higher testing volume or critical production monitoring:
+- 150 tests per month
+- All Starter features
+- Priority support
+- Same step limit and timeout as Starter
+
+## Quotas
+
+### How quotas work
+
+Your monthly test quota limits how many tests you can run in a billing cycle:
+- Each test run (manual or scheduled) counts as one test
+- Quota resets on your billing cycle start date
+- Unused quota rolls over to the next month, capped at 2x your plan's monthly limit
+
+### Quota enforcement
+
+Flowly checks your quota before test execution:
+- If quota is available, the test runs normally
+- If quota is exhausted, the test is blocked and won't execute
+- You'll receive a notification email if a scheduled test is blocked due to quota
+
+### Monitoring usage
+
+Track your quota consumption in real-time:
+
+<Steps>
+  <Step title="Go to dashboard">
+    Navigate to **Dashboard** > **Overview**
+  </Step>
+
+  <Step title="Check quota panel">
+    View your current usage, remaining tests, and reset date
+  </Step>
+
+  <Step title="Review run history">
+    See which tests consumed quota and when
+  </Step>
+</Steps>
+
+<Warning>
+  Plan ahead if you're approaching your quota limit. Blocked tests can miss critical issues in production.
+</Warning>
+
+## Upgrading your plan
+
+Upgrade to access more tests, scheduling, and notifications:
+
+<Steps>
+  <Step title="Choose a plan">
+    Click **Upgrade** in the dashboard or visit the [pricing page](https://useflowly.ai/pricing)
+  </Step>
+
+  <Step title="Select billing cycle">
+    Choose monthly or annual billing. Annual billing typically offers a discount.
+  </Step>
+
+  <Step title="Complete payment">
+    Enter payment details. All payments are processed securely via Polar.
+  </Step>
+
+  <Step title="Start using new features">
+    Your upgrade takes effect immediately. Create schedules, set up notifications, and run more tests.
+  </Step>
+</Steps>
+
+## Managing your subscription
+
+Access the customer portal to manage billing and subscriptions:
+
+1. Go to **Dashboard** > **Profile**
+2. Click **Manage subscription**
+3. You'll be redirected to the Polar customer portal
+
+From the customer portal you can:
+- Update payment method
+- Change plans (upgrade or downgrade)
+- View invoices and billing history
+- Cancel your subscription
+
+### Changing plans
+
+**Upgrading**: Takes effect immediately. You'll be charged a prorated amount for the remainder of your current billing cycle.
+
+**Downgrading**: Takes effect at the end of your current billing cycle. You keep your current plan's features until then.
+
+### Canceling
+
+If you cancel your subscription:
+- Your plan remains active until the end of the current billing cycle
+- You won't be charged again
+- All test cases and run history are preserved
+
+<Note>
+  You can reactivate a canceled subscription anytime before it expires to keep your current plan without interruption.
+</Note>
+
+## Payment and billing
+
+### Payment methods
+
+Flowly accepts:
+- Credit cards (Visa, Mastercard, American Express)
+- Debit cards
+- Other methods supported by Polar
+
+All payment processing is handled by [Polar](https://polar.sh), a secure payment platform for developer tools.
+
+### Billing cycles
+
+Choose between:
+- **Monthly**: Billed every month on the date you subscribed
+- **Annual**: Billed once per year at a discounted rate
+
+Your quota resets at the start of each billing cycle.
+
+### Invoices
+
+Access invoices from the customer portal:
+1. Go to **Dashboard** > **Profile** > **Manage subscription**
+2. View and download invoices from the Polar portal
+
+Invoices are also emailed to your account email address after each successful payment.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What happens if I exceed my quota?">
+    Both manual and scheduled tests will be blocked until your quota resets at the next billing cycle. You'll receive email notifications about blocked scheduled tests.
+  </Accordion>
+
+  <Accordion title="Can I purchase additional tests mid-cycle?">
+    Not currently. If you consistently hit quota limits, upgrade to a higher plan for more monthly tests.
+  </Accordion>
+
+  <Accordion title="Do failed tests count against my quota?">
+    Yes. Every test execution (whether it passes or fails) counts as one test toward your monthly quota.
+  </Accordion>
+
+  <Accordion title="What if I downgrade mid-cycle?">
+    Your current plan remains active until the end of the billing cycle. The downgrade takes effect on your next renewal date.
+  </Accordion>
+
+  <Accordion title="Can I get a refund?">
+    Refund policies are handled through Polar. Contact support@useflowly.ai for refund requests.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,148 @@
+---
+title: "Dashboard"
+description: "Monitor your tests, manage test cases, and track usage from a central dashboard."
+---
+
+## Overview
+
+The dashboard is your central hub after signing in. It provides quick access to test cases, run history, schedules, and account settings.
+
+## Dashboard sections
+
+<CardGroup cols={2}>
+  <Card title="Overview" icon="chart-pie">
+    Quick stats showing total test cases, active schedules, and quota usage for the current billing cycle.
+  </Card>
+
+  <Card title="Test cases" icon="vials">
+    Browse, search, create, and manage all your test cases in one place.
+  </Card>
+
+  <Card title="Run history" icon="clock-rotate-left">
+    View results from recent test runs with pass/fail status, timestamps, and links to detailed results.
+  </Card>
+
+  <Card title="Schedules" icon="calendar-days">
+    View and manage all active and paused schedules across your account.
+  </Card>
+</CardGroup>
+
+## Overview panel
+
+The overview panel displays:
+
+- **Total test cases**: Number of active test cases in your account
+- **Active schedules**: Number of schedules currently running
+- **Quota usage**: Tests used this month out of your plan's monthly limit
+- **Billing cycle**: Days remaining until quota resets
+
+This panel gives you a snapshot of your testing activity without needing to navigate multiple pages.
+
+## Test cases
+
+The test cases section shows all your saved test configurations. From here you can:
+
+- **Create new test cases**: Click **New Test Case** to add a test
+- **Search and filter**: Find specific tests by name or URL
+- **Run tests**: Execute any test case immediately
+- **Edit or delete**: Manage existing test cases
+- **View run history**: See all previous runs for a specific test case
+
+### Test case list
+
+Each test case shows:
+- Name and target URL
+- Last run timestamp and status
+- Number of total runs
+- Quick actions (Run, Edit, Delete)
+
+Click on any test case to see its full details and complete run history.
+
+## Run history
+
+The run history section displays recent test executions across all test cases:
+
+- **Timestamp**: When the test started
+- **Test case name**: Which test was executed
+- **Status**: Pass or fail
+- **Duration**: Total execution time
+- **Actions**: Link to view detailed results
+
+### Filtering history
+
+Use filters to narrow down runs:
+- **Status**: Show only passed or failed tests
+- **Date range**: View runs from specific time periods
+- **Test case**: Filter by a specific test case
+
+## Test viewer
+
+Click any test run to open the detailed test viewer, which shows:
+
+- **Step-by-step replay**: Screenshots from each step of the test
+- **Actions taken**: What the AI did at each step (clicked, typed, navigated, etc.)
+- **AI reasoning**: Why the AI chose each action
+- **Pass/fail status**: Whether each step succeeded or failed
+- **Execution time**: How long each step took
+
+The test viewer helps you debug failures by showing exactly what happened during execution.
+
+<Tip>
+  Use the test viewer to refine your test plans. If the AI took an unexpected action, check its reasoning to understand why and adjust your instructions accordingly.
+</Tip>
+
+## Schedules
+
+The schedules section lists all automated test schedules:
+
+- **Test case name**: Which test is scheduled
+- **Frequency**: How often it runs (daily, weekly, custom)
+- **Next run**: When the next execution is scheduled
+- **Status**: Active or paused
+
+From here you can:
+- Toggle schedules on/off
+- Edit schedule settings
+- Delete schedules
+- View notification settings
+
+## Profile and settings
+
+Access your profile from the dashboard to:
+
+- **View subscription tier**: See your current plan (Free, Starter, Pro)
+- **Manage billing**: Update payment method or change plans
+- **Access customer portal**: View invoices and billing history through the Polar customer portal
+- **Check usage**: Review quota consumption and billing cycle dates
+
+## Usage tracking
+
+Monitor your monthly test quota consumption:
+
+- **Tests used**: Number of tests run this billing cycle
+- **Tests remaining**: Available tests until quota resets
+- **Reset date**: When your quota will refresh
+
+<Warning>
+  If you exhaust your monthly quota, both manual and scheduled tests will be blocked until the next billing cycle. Upgrade your plan if you consistently hit quota limits.
+</Warning>
+
+## Best practices
+
+<AccordionGroup>
+  <Accordion title="Organize test cases with naming conventions">
+    Use prefixes or suffixes to group related tests (e.g., "Checkout - ", "Login - "). This makes searching and filtering easier.
+  </Accordion>
+
+  <Accordion title="Review run history regularly">
+    Check for patterns in failures. Consistent failures in specific test cases may indicate brittle tests or site issues.
+  </Accordion>
+
+  <Accordion title="Monitor quota early in billing cycle">
+    If you're approaching your limit mid-cycle, consider upgrading to avoid blocked tests later.
+  </Accordion>
+
+  <Accordion title="Use the test viewer for debugging">
+    Don't just check pass/fail status. Review the AI's reasoning to improve your test plans over time.
+  </Accordion>
+</AccordionGroup>

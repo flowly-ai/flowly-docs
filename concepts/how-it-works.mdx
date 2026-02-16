@@ -1,0 +1,71 @@
+---
+title: "How it works"
+description: "Understand the AI agent loop that powers Flowly's automated testing."
+---
+
+## Overview
+
+Flowly combines Claude AI with Playwright browser automation in an agent loop. The AI receives screenshots and DOM context, reasons about your test plan, and decides which actions to take next.
+
+## The agent loop
+
+<Steps>
+  <Step title="Screenshot capture">
+    Playwright takes a screenshot of the current page state. This visual context helps the AI understand the UI layout and element positions.
+  </Step>
+
+  <Step title="Element extraction">
+    DOM analysis finds all interactive elements on the page (buttons, links, input fields, forms). Each element is tagged with its text content, label, and type.
+  </Step>
+
+  <Step title="AI decision">
+    Claude receives:
+    - The screenshot (visual context)
+    - List of available elements with their labels
+    - Your test plan instructions
+    - Previous action history
+
+    The AI reasons about what action to take next and provides an explanation for its decision.
+  </Step>
+
+  <Step title="Action execution">
+    Playwright performs the action determined by the AI:
+    - **CLICK**: Click an element (button, link, etc.)
+    - **TYPE**: Enter text into an input field
+    - **SUCCESS**: Test completed successfully
+    - **FAIL**: Test failed (criteria not met)
+
+    The action and reasoning are logged and streamed to your dashboard.
+  </Step>
+
+  <Step title="Loop continuation">
+    The cycle repeats from step 1 until the AI determines success or failure, or reaches the maximum iteration limit (20 steps by default).
+  </Step>
+</Steps>
+
+## Action types
+
+| Action | Description | Example |
+|--------|-------------|---------|
+| `CLICK` | Click an element on the page | Click the "Add to cart" button |
+| `TYPE` | Enter text into an input field | Type "test@example.com" in the email field |
+| `SUCCESS` | Test passed all criteria | Verification successful, test complete |
+| `FAIL` | Test failed to meet criteria | Expected element not found |
+
+## Real-time streaming
+
+Results stream via Server-Sent Events (SSE) so you see each step as it happens. This gives you live visibility into:
+- Current screenshot
+- AI's reasoning for each action
+- Action execution status
+- Any errors or warnings
+
+<Note>
+The AI uses chain-of-thought reasoning to explain each action it takes. This transparency helps you understand why tests pass or fail and makes debugging easier.
+</Note>
+
+## Limitations
+
+- Maximum 20 iterations per test run to prevent infinite loops
+- Tests run in headless mode (no visible browser window)
+- JavaScript-heavy SPAs may require page load delays between actions
